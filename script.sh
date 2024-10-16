@@ -9,5 +9,9 @@
  sudo echo "PASSWORD=${PASSWORD}" >> /home/ubuntu/.env
  sudo chown ubuntu:ubuntu /home/ubuntu/.env
  sudo chmod 600 /home/ubuntu/.env
+ sudo apt install nginx -y
+ echo 'Hostname is ' $(hostname -f) | sudo tee /var/www/html/index.html
+ sudo systemctl start nginx
+ sudo systemctl enable nginx
 
  
